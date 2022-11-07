@@ -1,0 +1,45 @@
+<!--
+ * @Description: 
+ * @Author: 李大玄
+ * @Date: 2021-12-09 10:33:38
+ * @FilePath: /web_beacon/public/index.html
+ * @LastEditors: 李大玄
+ * @LastEditTime: 2022-06-23 11:09:36
+-->
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta http-equiv="pragram" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="expires" content="0">
+
+  <title>新版UI</title>
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <!-- 使用CDN的CSS文件 -->
+  <% for (var i in htmlWebpackPlugin.options.cdn && htmlWebpackPlugin.options.cdn.css) { %>
+    <link href="<%= htmlWebpackPlugin.options.cdn.css[i] %>" rel="external nofollow" rel="external nofollow" rel="preload" as="style">
+    <link href="<%= htmlWebpackPlugin.options.cdn.css[i] %>" rel="external nofollow" rel="external nofollow" rel="stylesheet">
+    <% } %>
+      <!-- 使用CDN的JS文件 -->
+      <% for (var i in htmlWebpackPlugin.options.cdn && htmlWebpackPlugin.options.cdn.js) { %>
+        <link href="<%= htmlWebpackPlugin.options.cdn.js[i] %>" rel="external nofollow" rel="preload" as="script">
+        <% } %>
+</head>
+
+<body>
+  <!--<noscript>-->
+  <!--  <strong>We're sorry but eye-admin doesn't work properly without JavaScript enabled. Please enable it to continue.v_1.0.0</strong>-->
+  <!--</noscript>-->
+  <div id="app">
+    <Application></Application>
+  </div>
+  <% for (var i in htmlWebpackPlugin.options.cdn && htmlWebpackPlugin.options.cdn.js) { %>
+    <script src="<%= htmlWebpackPlugin.options.cdn.js[i] %>"></script>
+    <% } %>
+</body>
+
+</html>
